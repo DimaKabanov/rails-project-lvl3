@@ -86,6 +86,8 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    i18n-debug (1.2.0)
+      i18n (< 2)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -143,6 +145,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails-i18n (6.0.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 7)
     railties (6.1.4.4)
       actionpack (= 6.1.4.4)
       activesupport (= 6.1.4.4)
@@ -243,12 +248,14 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  i18n-debug
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  rails-i18n (~> 6.0.0)
   rollbar
   rubocop-rails
   sass-rails (>= 6)
