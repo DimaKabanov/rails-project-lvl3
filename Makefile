@@ -13,6 +13,9 @@ lint:
 linter-fix:
 	bundle exec rubocop -A
 
+slim-lint:
+	slim-lint app/views
+
 deploy:
 	git push heroku main
 
