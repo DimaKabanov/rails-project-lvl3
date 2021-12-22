@@ -1,2 +1,13 @@
 en:
   title: Bulletin board
+  nav:
+    bulletins: Bulletins
+    signout: Sign Out
+    login: Login
+    signup: Signup
+    add_bulletin: Create bulletin
+    my_bulletin: My bulletins
+  layouts:
+    shared:
+      footer:
+        hexlet_title: © Hexlet, %{year}

@@ -1,2 +1,13 @@
 ru:
   title: Доска объявлений
+  nav:
+    bulletins: Объявления
+    signout: Выйти
+    login: Войти
+    signup: Зарегистрироваться
+    add_post: Создать объявление
+    my_bulletin: Мои объявления
+  layouts:
+    shared:
+      footer:
+        hexlet_title: © Хекслет, %{year}

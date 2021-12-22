@@ -13,4 +13,4 @@ import 'bootstrap/dist/js/bootstrap';
 Rails.start()
 // Turbolinks.start()
 // ActiveStorage.start()
-// const images = require.context('../images', true);
+const images = require.context('../images', true);
