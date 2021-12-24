@@ -1,0 +1,8 @@
+en:
+  users:
+    new:
+      signup: Sign up
+      signin: Sign in
+      github: Github
+      via_networks: Via social networks
+      already_account: Already have an account?

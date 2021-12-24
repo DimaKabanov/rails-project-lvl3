@@ -1,0 +1,8 @@
+ru:
+  users:
+    new:
+      signup: Зарегистрироваться
+      signin: Войти
+      github: Github
+      via_networks: Через социальные сети
+      already_account: Уже есть аккаунт?

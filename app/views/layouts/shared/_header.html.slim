@@ -3,13 +3,20 @@ header.d-flex.justify-content-between.align-items-center.py-lg-3.mb-4
     h1.h3 = t('title')
   nav.nav.nav-masthead.justify-content-center.align-items-center.flex-grow-1
     = link_to t('nav.bulletins'), root_path, class: 'nav-link text-body'
-    - if false
+
+    - if signed_in?
       = link_to t('nav.my_bulletin'), '', class: 'nav-link text-body'
       = link_to t('nav.add_bulletin'), '', class: 'nav-link text-body'
-      = link_to t('nav.signout'), '', class: 'nav-link text-body ms-auto'
+      = link_to(t('nav.signout'),
+                  session_path,
+                  method: :delete,
+                  class: 'nav-link text-body ms-auto')
     - else
-      = link_to t('nav.login'), '', class: 'nav-link text-body ms-auto'
-      = link_to t('nav.signup'), '', class: 'nav-link text-body'
+      = link_to(t('nav.login'),
+                  new_session_path,
+                  class: 'nav-link text-body ms-auto')
+      = link_to t('nav.signup'), new_user_path, class: 'nav-link text-body'
+
     - I18n.available_locales.without(I18n.locale).each do |locale|
       = link_to url_for(locale: locale) do
           = image_tag(asset_pack_path("media/images/flag-#{locale}.svg"),

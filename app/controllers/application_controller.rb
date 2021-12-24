@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include AuthConcern
+
   around_action :switch_locale
 
   def switch_locale(&action)

@@ -1,0 +1,6 @@
+en:
+  sessions:
+    new:
+      signin: Sign in
+      github: Github
+      via_networks: Via social networks
