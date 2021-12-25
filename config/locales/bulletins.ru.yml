@@ -1,0 +1,8 @@
+ru:
+  bulletins:
+    index:
+      title: Объявления
+      empty: Объявлений пока нет
+      created_at: Создано %{time} назад
+    new:
+      title: Создать объявление

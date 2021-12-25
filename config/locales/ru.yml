@@ -5,7 +5,7 @@ ru:
     signout: Выйти
     login: Войти
     signup: Зарегистрироваться
-    add_post: Создать объявление
+    add_bulletin: Создать объявление
     my_bulletin: Мои объявления
   layouts:
     shared:

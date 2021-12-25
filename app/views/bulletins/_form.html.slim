@@ -1,0 +1,15 @@
+.row.text-start.justify-content-center
+  .col-8
+    = simple_form_for(@bulletin) do |f|
+      = f.error_notification
+
+      .mb-3
+        = f.input :title
+      .mb-3
+        = f.input :body
+      .mb-3
+        = f.association :category
+      .mb-4
+        = f.input :image, as: :file
+      .actions
+        = f.button :submit, class: 'w-100 btn btn-lg btn-primary'

@@ -1,0 +1,15 @@
+ru:
+  simple_form:
+    yes: Да
+    no: Нет
+    required:
+      text: обязательно
+      mark: '*'
+    error_notification:
+      default_message: 'Пожалуйста, исправте ошибки ниже:'
+    labels:
+      bulletin:
+        title: Заголовок объявления
+        body: Текст объявления
+        category: Категория объявления
+        image: Изображение объявления

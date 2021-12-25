@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    attributes:
+      bulletin:
+        title: Title
+        body: Text
+        category: Bulletin category
+        image: Image

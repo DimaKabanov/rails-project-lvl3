@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    attributes:
+      bulletin:
+        title: Заголовок
+        body: Текст
+        category: Категория объявления
+        image: Изображение

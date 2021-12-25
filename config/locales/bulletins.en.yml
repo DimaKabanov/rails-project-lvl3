@@ -1,0 +1,8 @@
+en:
+  bulletins:
+    index:
+      title: Bulletins
+      empty: No bulletins yet
+      created_at: Created at %{time} ago
+    new:
+      title: Create bulletin

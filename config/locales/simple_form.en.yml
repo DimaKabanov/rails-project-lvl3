@@ -1,0 +1,15 @@
+en:
+  simple_form:
+    yes: Yes
+    no: No
+    required:
+      text: required
+      mark: '*'
+    error_notification:
+      default_message: 'Please review the problems below:'
+    labels:
+      bulletin:
+        title: Bulletin title
+        body: Bulletin text
+        category: Bulletin category
+        image: Bulletin image

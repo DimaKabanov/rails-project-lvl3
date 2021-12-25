@@ -1,0 +1,24 @@
+.mt-4.mb-5.pb-5
+  .container
+    .p-4.align-items-center.border.shadow.bg-white.rounded-3
+      .row
+        .p-3.p-lg-5.pt-lg-0
+          h2.mb-4 = t('.title')
+          - if @bulletins.empty?
+            h2.display-6 = t('.empty')
+          - else
+            .row.row-cols-1.row-cols-md-3.g-4
+              - @bulletins.each do |bulletin|
+                .col
+                  .card.h-100.text-start
+                    = image_tag(rails_blob_path(bulletin.image),
+                                                class: 'card-img-top',
+                                                alt: bulletin.title)
+                    .card-body
+                      h3.card-title.h5
+                        = link_to bulletin.title, bulletin
+                      p.card-text = truncate(bulletin.body, length: 100)
+                    .card-footer
+                      small.text-muted
+                        = t('.created_at',
+                            time: time_ago_in_words(bulletin.created_at))
