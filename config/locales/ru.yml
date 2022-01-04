@@ -19,3 +19,9 @@ ru:
     shared:
       footer:
         hexlet_title: © Хекслет, %{year}
+  ransack:
+    reset: Сбросить
+    bulletin:
+      title: Заголовок объявления
+    category:
+      title: Название категории

@@ -4,7 +4,8 @@ class BulletinsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @bulletins = Bulletin.published.order(created_at: :desc)
+    @q = Bulletin.published.order(created_at: :desc).ransack(params[:q])
+    @bulletins = @q.result(distinct: true)
     authorize @bulletins
   end
 

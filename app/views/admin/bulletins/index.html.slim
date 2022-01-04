@@ -3,6 +3,8 @@
     = render 'admin/shared/nav'
   .col-md-9
     h2.text-start.mb-4 = t('.title')
+    .p-3.bg-light.text-start.mb-5
+      = render 'bulletins/search_form', query: @q, url: admin_bulletins_path
     - if @bulletins.empty?
       p.display-8 = t('.empty')
     - else

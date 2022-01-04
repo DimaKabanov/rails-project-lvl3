@@ -41,6 +41,8 @@ gem 'rollbar'
 
 gem 'pundit'
 
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 group :production do
   gem 'pg'
 end

@@ -4,7 +4,8 @@ class Admin::BulletinsController < Admin::ApplicationController
   after_action :verify_authorized
 
   def index
-    @bulletins = Bulletin.all
+    @q = Bulletin.ransack(params[:q])
+    @bulletins = @q.result(distinct: true)
     authorize [:admin, @bulletins]
   end
 

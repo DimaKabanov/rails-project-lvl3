@@ -19,3 +19,9 @@ en:
     shared:
       footer:
         hexlet_title: © Hexlet, %{year}
+  ransack:
+    reset: Reset
+    bulletin:
+      title: Bulletin title
+    category:
+      title: Category name

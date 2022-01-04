@@ -4,6 +4,8 @@
       .row
         .p-3.p-lg-5.pt-lg-0
           h2.mb-4 = t('.title')
+          .p-3.bg-light.text-start.mb-5
+            = render 'search_form', query: @q, url: bulletins_path
           - if @bulletins.empty?
             p.display-8 = t('.empty')
           - else

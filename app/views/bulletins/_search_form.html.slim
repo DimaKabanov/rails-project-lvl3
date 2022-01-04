@@ -1,0 +1,13 @@
+= search_form_for query, url: url do |f|
+  .row.my-2.align-items-end
+    .col-5
+      = f.input :title_cont, as: :search, label: t('ransack.bulletin.title')
+    .col-4
+      = f.input(:category_name_eq,
+                collection: Category.all.map(&:name),
+                label: t('ransack.category.title'))
+    .col-3.d-flex.align-items-center
+      = f.button :submit, class: 'btn btn-primary me-2'
+      = link_to(t('ransack.reset'),
+                request.referer,
+                class: 'btn btn-outline-primary')
