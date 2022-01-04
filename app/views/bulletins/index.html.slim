@@ -5,7 +5,7 @@
         .p-3.p-lg-5.pt-lg-0
           h2.mb-4 = t('.title')
           - if @bulletins.empty?
-            h2.display-6 = t('.empty')
+            p.display-8 = t('.empty')
           - else
             .row.row-cols-1.row-cols-md-3.g-4
               - @bulletins.each do |bulletin|

@@ -6,3 +6,5 @@ en:
       created_at: Created at %{time} ago
     new:
       title: Create bulletin
+    edit:
+      title: Update bulletin

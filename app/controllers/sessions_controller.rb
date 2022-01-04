@@ -4,18 +4,22 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_or_create_by_auth(request.env['omniauth.auth'])
+    user = User.find_by(user_params)
 
-    if user
+    if user&.admin?
       sign_in user
-      redirect_to root_path
+      redirect_to admin_root_path, notice: t('messages.welcome_admin')
     else
-      redirect_to new_session_path, notice: t('.inсorrect')
+      redirect_to new_session_path, notice: t('messages.inсorrect_admin')
     end
   end
 
   def destroy
     sign_out
-    redirect_to root_path
+    redirect_to root_path, notice: t('messages.goodby')
+  end
+
+  def user_params
+    params.require(:user).permit(:email)
   end
 end

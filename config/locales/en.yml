@@ -1,5 +1,12 @@
 en:
   title: Bulletin board
+  as_admin: Sign in as admin
+  messages:
+    welcome_user: Welcome to the Bulletin board, %{user}!
+    inсorrect_user: Failed to log in
+    welcome_admin: Welcome, admin!
+    inсorrect_admin: Inсorrect admin email
+    goodby: Goodby!
   nav:
     bulletins: Bulletins
     signout: Sign Out
@@ -7,6 +14,7 @@ en:
     signup: Signup
     add_bulletin: Create bulletin
     my_bulletin: My bulletins
+    admin: Admin
   layouts:
     shared:
       footer:

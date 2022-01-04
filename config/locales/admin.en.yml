@@ -1,0 +1,42 @@
+en:
+  admin:
+    menu:
+      on_moderation: Bulletins on moderation
+      all_bulletins: All bulletins
+      all_categories: All categories
+    home:
+      index:
+        title: Bulletins on moderation
+        empty: No bulletins for moderation
+        name: Name
+        created_at: Created at
+        created_at_relative: '%{time} ago'
+        creator: Creator
+        actions: Actions
+        approve: Approve
+        reject: Reject
+        archive: Archive
+    bulletins:
+      index:
+        title: Bulletins
+        empty: No bulletins yet
+        name: Name
+        state: State
+        created_at: Created at
+        created_at_relative: '%{time} ago'
+        creator: Creator
+        actions: Actions
+        show: Show
+        archive: Archive
+    categories:
+      index:
+        title: Categories
+        empty: No categories yet
+        add: Add category
+        id: ID
+        name: Name
+        actions: Actions
+        edit: Edit
+        destroy: Destroy
+      new:
+        title: New category

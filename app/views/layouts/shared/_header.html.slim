@@ -5,12 +5,18 @@ header.d-flex.justify-content-between.align-items-center.py-lg-3.mb-4
     = link_to t('nav.bulletins'), root_path, class: 'nav-link text-body'
 
     - if signed_in?
-      = link_to t('nav.my_bulletin'), '', class: 'nav-link text-body'
-      = link_to t('nav.add_bulletin'), new_bulletin_path, class: 'nav-link text-body'
+      = link_to(t('nav.my_bulletin'),
+                  profile_path,
+                  class: 'nav-link text-body')
+      = link_to(t('nav.add_bulletin'),
+                  new_bulletin_path,
+                  class: 'nav-link text-body me-auto')
+      - if current_user.admin?
+        = link_to t('nav.admin'), admin_root_path, class: 'nav-link text-body'
       = link_to(t('nav.signout'),
                   session_path,
                   method: :delete,
-                  class: 'nav-link text-body ms-auto')
+                  class: 'nav-link text-body')
     - else
       = link_to(t('nav.login'),
                   new_session_path,

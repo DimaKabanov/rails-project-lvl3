@@ -1,0 +1,14 @@
+en:
+  pundit:
+    default: This action is only available to authorized users
+    bulletin_policy:
+      show?: You cannot watch this bulletin
+      edit?: You cannot edit this bulletin
+      update?: You cannot update this bulletin
+      to_moderate?: You cannot submit this bulletin for moderation
+      archive?: You cannot archive this bulletin
+    admin/bulletin_policy:
+      show?: You cannot watch this bulletin
+      approve?: You cannot approve this bulletin
+      reject?: You cannot reject this bulletin
+      archive?: You cannot archive this bulletin

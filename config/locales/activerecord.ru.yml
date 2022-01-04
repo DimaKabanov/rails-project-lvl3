@@ -6,3 +6,5 @@ ru:
         body: Текст
         category: Категория объявления
         image: Изображение
+      category:
+        name: Название

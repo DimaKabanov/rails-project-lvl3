@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.0.1'
 
+gem 'aasm'
+
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
@@ -36,6 +38,8 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'simple_form'
 
 gem 'rollbar'
+
+gem 'pundit'
 
 group :production do
   gem 'pg'

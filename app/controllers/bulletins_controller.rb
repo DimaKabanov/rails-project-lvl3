@@ -1,15 +1,20 @@
 # frozen_string_literal: true
 
 class BulletinsController < ApplicationController
+  after_action :verify_authorized
+
   def index
-    @bulletins = Bulletin.order(created_at: :desc)
+    @bulletins = Bulletin.published.order(created_at: :desc)
+    authorize @bulletins
   end
 
   def new
+    authorize Bulletin
     @bulletin = current_user.bulletins.build
   end
 
   def create
+    authorize Bulletin
     @bulletin = current_user.bulletins.build(bulletin_params)
 
     if @bulletin.save
@@ -20,15 +25,18 @@ class BulletinsController < ApplicationController
   end
 
   def show
-    @bulletin = Bulletin.find(params[:id])
+    @bulletin = bulletin
+    authorize @bulletin
   end
 
   def edit
-    @bulletin = Bulletin.find(params[:id])
+    @bulletin = bulletin
+    authorize @bulletin
   end
 
   def update
-    @bulletin = Bulletin.find(params[:id])
+    @bulletin = bulletin
+    authorize @bulletin
 
     if @bulletin.update(bulletin_params)
       redirect_to bulletin_path(@bulletin)
@@ -37,17 +45,31 @@ class BulletinsController < ApplicationController
     end
   end
 
-  def destroy
-    @bulletin = Bulletin.find(params[:id])
+  def to_moderate
+    @bulletin = bulletin
+    authorize @bulletin
+    @bulletin.to_moderate!
 
-    if @bulletin.destroy
-      redirect_to root_path
-    else
-      redirect_to bulletin_path(@bulletin)
-    end
+    return unless @bulletin.under_moderation?
+
+    redirect_to profile_path, notice: 'Bulletin was successfully submitted for moderation'
+  end
+
+  def archive
+    @bulletin = bulletin
+    authorize @bulletin
+    @bulletin.archive!
+
+    return unless @bulletin.archived?
+
+    redirect_to profile_path, notice: 'Bulletin was successfully archived'
   end
 
   private
+
+  def bulletin
+    @bulletin ||= Bulletin.find(params[:id])
+  end
 
   def bulletin_params
     params.require(:bulletin).permit(:title, :body, :category_id, :image)

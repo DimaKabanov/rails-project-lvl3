@@ -1,0 +1,8 @@
+en:
+  confirm:
+    bulletin:
+      archive: Are you sure you want to archive the bulletin?
+      approve: Are you sure you want to approve the bulletin?
+      reject: Are you sure you want to reject the bulletin?
+    category:
+      destroy: Are you sure you want to destroy the category?

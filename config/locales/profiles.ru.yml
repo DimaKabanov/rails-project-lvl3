@@ -1,0 +1,15 @@
+ru:
+  profiles:
+    index:
+      title: Мои объявления
+      add_bulletin: Добавить объявление
+      empty: Вы еще не создали ни одного объявления
+      name: Название
+      state: Состояние
+      created_at: Создано
+      actions: Действия
+      created_at_relative: '%{time} назад'
+      show: Показать
+      edit: Редактировать
+      to_moderate: На модерацию
+      archive: В архив

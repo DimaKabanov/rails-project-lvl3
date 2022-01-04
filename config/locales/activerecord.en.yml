@@ -6,3 +6,5 @@ en:
         body: Text
         category: Bulletin category
         image: Image
+      category:
+        name: Name

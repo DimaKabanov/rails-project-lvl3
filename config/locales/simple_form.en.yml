@@ -13,3 +13,5 @@ en:
         body: Bulletin text
         category: Bulletin category
         image: Bulletin image
+      defaults:
+        email: Email

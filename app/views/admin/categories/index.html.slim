@@ -1,0 +1,32 @@
+.row.text-start
+  .col-md-3
+    = render 'admin/shared/nav'
+  .col-md-9
+    h2.text-start.mb-4 = t('.title')
+    - if policy([:admin, Category]).new?
+      = link_to t('.add'), new_admin_category_path
+    - if @categories.empty?
+      p.display-8 = t('.empty')
+    - else
+      table.table.table-borderless.mt-2
+        thead
+          tr
+            th = t('.id')
+            th = t('.name')
+            th = t('.actions')
+        tbody
+          - @categories.each do |category|
+            tr
+              td = category.id
+              td = category.name
+              td
+                - if policy([:admin, category]).edit?
+                  = link_to(t('.edit'),
+                            edit_admin_category_path(category),
+                            class: 'me-2')
+                - if policy([:admin, category]).destroy?
+                  = link_to(t('.destroy'),
+                            admin_category_path(category),
+                            method: :delete,
+                            data: { confirm: t('confirm.category.destroy') },
+                            class: 'text-danger')

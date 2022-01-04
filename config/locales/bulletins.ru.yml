@@ -6,3 +6,5 @@ ru:
       created_at: Создано %{time} назад
     new:
       title: Создать объявление
+    edit:
+      title: Обновить объявление

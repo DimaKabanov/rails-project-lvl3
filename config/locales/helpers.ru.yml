@@ -3,3 +3,7 @@ ru:
     submit:
       bulletin:
         create: Создать объявление
+        update: Обновить объявление
+      category:
+        create: Создать категорию
+        update: Обновить категорию

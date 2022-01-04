@@ -1,5 +1,12 @@
 ru:
   title: Доска объявлений
+  as_admin: Войти как администратор
+  messages:
+    welcome_user: Добро пожаловать на Доску объявлений, %{user}!
+    inсorrect_user: Не получилось войти
+    welcome_admin: Добро пожаловать, администратор!
+    inсorrect_admin: Неправильная почта администратора
+    goodby: До свидания!
   nav:
     bulletins: Объявления
     signout: Выйти
@@ -7,6 +14,7 @@ ru:
     signup: Зарегистрироваться
     add_bulletin: Создать объявление
     my_bulletin: Мои объявления
+    admin: Администратор
   layouts:
     shared:
       footer:

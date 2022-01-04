@@ -3,3 +3,6 @@ en:
     submit:
       bulletin:
         create: Create bulletin
+        update: Update bulletin
+      category:
+        create: Create category
