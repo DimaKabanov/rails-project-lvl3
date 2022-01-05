@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ProfilesController < ApplicationController
+class Web::ProfilesController < Web::ApplicationController
   after_action :verify_authorized
 
   def index

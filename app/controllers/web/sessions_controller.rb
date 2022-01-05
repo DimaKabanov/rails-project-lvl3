@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class SessionsController < ApplicationController
+class Web::SessionsController < Web::ApplicationController
   def new; end
 
   def create

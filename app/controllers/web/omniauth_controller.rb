@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class OmniauthController < ApplicationController
+class Web::OmniauthController < Web::ApplicationController
   def create
     user = User.find_or_create_by_auth(request.env['omniauth.auth'])
 
