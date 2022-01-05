@@ -24,3 +24,4 @@
                       small.text-muted
                         = t('.created_at',
                             time: time_ago_in_words(bulletin.created_at))
+            = paginate @bulletins, theme: 'bootstrap-5'

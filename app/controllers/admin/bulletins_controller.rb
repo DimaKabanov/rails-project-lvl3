@@ -5,7 +5,7 @@ class Admin::BulletinsController < Admin::ApplicationController
 
   def index
     @q = Bulletin.ransack(params[:q])
-    @bulletins = @q.result(distinct: true)
+    @bulletins = @q.result(distinct: true).page(params[:page])
     authorize [:admin, @bulletins]
   end
 

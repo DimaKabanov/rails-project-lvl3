@@ -31,3 +31,4 @@ h2.text-start.mb-4 = t('.title')
                         method: :patch,
                         data: { confirm: t('confirm.bulletin.archive') },
                         class: 'text-danger')
+  = paginate @bulletins, theme: 'bootstrap-5'

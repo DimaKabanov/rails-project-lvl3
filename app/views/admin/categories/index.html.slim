@@ -30,3 +30,4 @@
                             method: :delete,
                             data: { confirm: t('confirm.category.destroy') },
                             class: 'text-danger')
+      = paginate @categories, theme: 'bootstrap-5'

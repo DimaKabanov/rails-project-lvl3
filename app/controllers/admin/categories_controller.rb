@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @categories = Category.all
+    @categories = Category.all.page(params[:page])
     authorize [:admin, @categories]
   end
 
