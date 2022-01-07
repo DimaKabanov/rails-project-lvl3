@@ -1,10 +1,11 @@
 en:
-  bulletins:
-    index:
-      title: Bulletins
-      empty: No bulletins yet
-      created_at: Created at %{time} ago
-    new:
-      title: Create bulletin
-    edit:
-      title: Update bulletin
+  web:
+    bulletins:
+      index:
+        title: Bulletins
+        empty: No bulletins yet
+        created_at: Created at %{time} ago
+      new:
+        title: Create bulletin
+      edit:
+        title: Update bulletin

@@ -12,7 +12,7 @@ class Bulletin < ApplicationRecord
   validates :image, presence: true
   validates :body, presence: true, length: { minimum: 50 }
 
-  aasm whiny_transitions: false do
+  aasm column: :state do
     state :draft, initial: true
     state :under_moderation
     state :published

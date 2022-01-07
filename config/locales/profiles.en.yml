@@ -1,15 +1,16 @@
 en:
-  profiles:
-    index:
-      title: My bulletins
-      add_bulletin: Add bulletin
-      empty: You haven't created any bulletins yet
-      name: Name
-      state: State
-      created_at: Created at
-      actions: Actions
-      created_at_relative: '%{time} ago'
-      show: Show
-      edit: Edit
-      to_moderate: To moderate
-      archive: Archive
+  web:
+    profiles:
+      index:
+        title: My bulletins
+        add_bulletin: Add bulletin
+        empty: You haven't created any bulletins yet
+        name: Name
+        state: State
+        created_at: Created at
+        actions: Actions
+        created_at_relative: '%{time} ago'
+        show: Show
+        edit: Edit
+        to_moderate: To moderate
+        archive: Archive

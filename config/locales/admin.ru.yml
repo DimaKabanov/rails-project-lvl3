@@ -1,44 +1,45 @@
 ru:
-  admin:
-    menu:
-      on_moderation: Объявления на модерации
-      all_bulletins: Все объявления
-      all_categories: Все категории
-    home:
-      index:
-        title: Объявления на модерации
-        empty: Нет объявлений на модерацию
-        name: Название
-        created_at: Создано
-        created_at_relative: '%{time} назад'
-        creator: Автор
-        actions: Действия
-        approve: Утвердить
-        reject: Отклонить
-        archive: В архив
-    bulletins:
-      index:
-        title: Объявления
-        empty: Объявлений еще нет
-        name: Название
-        state: Состояние
-        created_at: Создано
-        created_at_relative: '%{time} назад'
-        creator: Автор
-        actions: Действия
-        show: Показать
-        archive: В архив
-    categories:
-      index:
-        title: Категории
-        empty: Категорий еще нет
-        add: Добавить категорию
-        id: ID
-        name: Название
-        actions: Действия
-        edit: Изменить
-        destroy: Удалить
-      new:
-        title: Новая категория
-      edit:
-        title: Изменить категорию
+  web:
+    admin:
+      menu:
+        on_moderation: Объявления на модерации
+        all_bulletins: Все объявления
+        all_categories: Все категории
+      home:
+        index:
+          title: Объявления на модерации
+          empty: Нет объявлений на модерацию
+          name: Название
+          created_at: Создано
+          created_at_relative: '%{time} назад'
+          creator: Автор
+          actions: Действия
+          approve: Утвердить
+          reject: Отклонить
+          archive: В архив
+      bulletins:
+        index:
+          title: Объявления
+          empty: Объявлений еще нет
+          name: Название
+          state: Состояние
+          created_at: Создано
+          created_at_relative: '%{time} назад'
+          creator: Автор
+          actions: Действия
+          show: Показать
+          archive: В архив
+      categories:
+        index:
+          title: Категории
+          empty: Категорий еще нет
+          add: Добавить категорию
+          id: ID
+          name: Название
+          actions: Действия
+          edit: Изменить
+          destroy: Удалить
+        new:
+          title: Новая категория
+        edit:
+          title: Изменить категорию

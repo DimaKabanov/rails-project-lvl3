@@ -3,7 +3,7 @@ ru:
     attributes:
       bulletin:
         title: Заголовок
-        body: Текст
+        description: Текст
         category: Категория объявления
         image: Изображение
       category:

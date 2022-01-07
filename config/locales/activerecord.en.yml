@@ -3,7 +3,7 @@ en:
     attributes:
       bulletin:
         title: Title
-        body: Text
+        description: Text
         category: Bulletin category
         image: Image
       category:

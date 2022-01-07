@@ -19,7 +19,7 @@
                     .card-body
                       h3.card-title.h5
                         = link_to bulletin.title, bulletin
-                      p.card-text = truncate(bulletin.body, length: 100)
+                      p.card-text = truncate(bulletin.description, length: 100)
                     .card-footer
                       small.text-muted
                         = t('.created_at',

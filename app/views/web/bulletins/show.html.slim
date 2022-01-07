@@ -9,6 +9,6 @@
               = image_tag(rails_blob_path(@bulletin.image),
                           class: 'img-thumbnail mb-4',
                           alt: @bulletin.title)
-              p.text-break = @bulletin.body
+              p.text-break = @bulletin.description
             .col-6
               p = @bulletin.creator.email
