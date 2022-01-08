@@ -40,6 +40,6 @@ class BulletinPolicy < ApplicationPolicy
   private
 
   def author?
-    record.creator == user
+    record.user == user
   end
 end

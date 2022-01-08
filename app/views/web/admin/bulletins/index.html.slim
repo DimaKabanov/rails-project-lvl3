@@ -23,7 +23,7 @@
               td = bulletin.aasm.human_state
               td = t('.created_at_relative',
                     time: time_ago_in_words(bulletin.created_at))
-              td = bulletin.creator.email
+              td = bulletin.user.email
               td
                 = link_to t('.show'), bulletin_path(bulletin), class: 'me-1'
                 - if policy([:admin, bulletin]).archive?

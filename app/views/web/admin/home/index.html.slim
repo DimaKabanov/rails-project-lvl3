@@ -19,7 +19,7 @@
               td = link_to bulletin.title, bulletin_path(bulletin)
               td = t('.created_at_relative',
                     time: time_ago_in_words(bulletin.created_at))
-              td = bulletin.creator.email
+              td = bulletin.user.email
               td
                 - if policy([:admin, bulletin]).approve?
                   = link_to(t('.approve'),

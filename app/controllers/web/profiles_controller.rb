@@ -4,7 +4,7 @@ class Web::ProfilesController < Web::ApplicationController
   after_action :verify_authorized
 
   def index
-    @bulletins = Bulletin.where(creator: current_user).page(params[:page])
+    @bulletins = Bulletin.where(user: current_user).page(params[:page])
     authorize [:profile, @bulletins]
   end
 end
