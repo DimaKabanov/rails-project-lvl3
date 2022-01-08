@@ -7,6 +7,14 @@ GIT
       activesupport (>= 5.2.4)
       i18n
 
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: c429f10d87395f7daf5f796f4d1e204c74688a9b
+  branch: master
+  specs:
+    faker (2.19.0)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -327,6 +335,7 @@ DEPENDENCIES
   bootstrap5-kaminari-views
   byebug
   capybara (>= 3.26)
+  faker!
   i18n-debug
   jbuilder (~> 2.7)
   kaminari

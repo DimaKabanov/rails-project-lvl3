@@ -7,6 +7,8 @@ ruby '~> 3.0.1'
 
 gem 'aasm'
 
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
