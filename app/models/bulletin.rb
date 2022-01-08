@@ -8,9 +8,9 @@ class Bulletin < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  validates :title, presence: true
-  validates :image, presence: true
-  validates :description, presence: true, length: { minimum: 5 }
+  validates :title, presence: true, length: { minimum: 3 }
+  validates :image, attached: true
+  validates :description, presence: true
 
   aasm column: :state do
     state :draft, initial: true
