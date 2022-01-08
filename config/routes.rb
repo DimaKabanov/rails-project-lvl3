@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resource :user, only: %i[new]
     resources :bulletins, only: %i[index show new create edit update] do
       patch 'archive', on: :member
-      patch 'to_moderate', on: :member
+      patch 'moderate', on: :member
     end
     get 'profile', to: 'profiles#index'
 

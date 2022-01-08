@@ -46,10 +46,10 @@ class Web::BulletinsController < Web::ApplicationController
     end
   end
 
-  def to_moderate
+  def moderate
     @bulletin = bulletin
     authorize @bulletin
-    @bulletin.to_moderate!
+    @bulletin.moderate!
 
     return unless @bulletin.under_moderation?
 

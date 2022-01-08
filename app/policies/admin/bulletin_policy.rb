@@ -5,7 +5,7 @@ class Admin::BulletinPolicy < ApplicationPolicy
     admin?
   end
 
-  def approve?
+  def publish?
     admin? && record.under_moderation?
   end
 

@@ -21,7 +21,7 @@
                     time: time_ago_in_words(bulletin.created_at))
               td = bulletin.user.email
               td
-                - if policy([:admin, bulletin]).approve?
+                - if policy([:admin, bulletin]).publish?
                   = link_to(t('.approve'),
                             publish_admin_bulletin_path(bulletin),
                             method: :patch,

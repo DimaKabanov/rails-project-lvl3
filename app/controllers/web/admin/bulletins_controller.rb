@@ -9,10 +9,10 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
     authorize [:admin, @bulletins]
   end
 
-  def approve
+  def publish
     @bulletin = bulletin
     authorize [:admin, @bulletin]
-    @bulletin.approve!
+    @bulletin.publish!
 
     return unless @bulletin.published?
 

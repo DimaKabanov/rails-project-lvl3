@@ -29,7 +29,7 @@ class BulletinPolicy < ApplicationPolicy
     author?
   end
 
-  def to_moderate?
+  def moderate?
     author? && record.draft?
   end
 
