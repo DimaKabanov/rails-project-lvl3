@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Web::OmniauthController < Web::ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     user = User.find_or_create_by_auth(request.env['omniauth.auth'])
 
