@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   def self.find_or_create_by_auth(auth)
-    pp auth
     find_or_create_by!(email: auth.info.email)
   end
 end
