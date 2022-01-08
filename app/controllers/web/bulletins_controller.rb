@@ -19,7 +19,7 @@ class Web::BulletinsController < Web::ApplicationController
     @bulletin = current_user.bulletins.build(bulletin_params)
 
     if @bulletin.save
-      redirect_to bulletin_path(@bulletin), notice: t('.success')
+      redirect_to profile_path, notice: t('.success')
     else
       render :new
     end
@@ -40,7 +40,7 @@ class Web::BulletinsController < Web::ApplicationController
     authorize @bulletin
 
     if @bulletin.update(bulletin_params)
-      redirect_to bulletin_path(@bulletin)
+      redirect_to profile_path
     else
       render :edit
     end
