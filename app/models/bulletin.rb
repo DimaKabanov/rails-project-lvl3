@@ -9,7 +9,7 @@ class Bulletin < ApplicationRecord
   belongs_to :category
 
   validates :title, presence: true, length: { minimum: 3 }
-  validates :image, attached: true
+  validates :image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 5.megabytes }
   validates :description, presence: true
 
   aasm column: :state do

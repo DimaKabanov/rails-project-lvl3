@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '~> 3.0.1'
 
 gem 'aasm'
+gem 'active_storage_validations'
 
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
