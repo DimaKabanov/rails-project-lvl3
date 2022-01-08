@@ -20,7 +20,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     if @category.save
       redirect_to admin_categories_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -36,7 +36,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     if @category.update(category_params)
       redirect_to admin_categories_path
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

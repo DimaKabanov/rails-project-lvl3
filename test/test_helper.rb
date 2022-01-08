@@ -12,4 +12,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def login_with_admin(admin)
+    post session_url, params: { user: { email: admin.email } }
+  end
 end
