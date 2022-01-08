@@ -23,7 +23,7 @@
               td
                 - if policy([:admin, bulletin]).approve?
                   = link_to(t('.approve'),
-                            approve_admin_bulletin_path(bulletin),
+                            publish_admin_bulletin_path(bulletin),
                             method: :patch,
                             data: { confirm: t('confirm.bulletin.approve') },
                             class: 'me-2')

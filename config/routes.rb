@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       root 'home#index'
       resources :categories
       resources :bulletins do
-        patch 'approve', on: :member
+        patch 'publish', on: :member
         patch 'reject', on: :member
         patch 'archive', on: :member
       end
