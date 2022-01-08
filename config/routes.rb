@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   scope module: :web do
     root 'bulletins#index'
 
-    get '/auth/:provider/callback', to: 'omniauth#create'
+    get '/auth/:provider/callback', to: 'omniauth#create', as: 'callback_auth', via: :all
     post '/auth/github', to: 'omniauth#create', as: 'github_omniauth_authorize'
 
     resource :session, only: %i[new create destroy]
