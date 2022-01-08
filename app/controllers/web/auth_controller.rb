@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::OmniauthController < Web::ApplicationController
+class Web::AuthController < Web::ApplicationController
   skip_before_action :verify_authenticity_token
 
   def github
