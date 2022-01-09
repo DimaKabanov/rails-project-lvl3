@@ -1,6 +1,7 @@
 en:
   title: Bulletin board
   as_admin: Sign in as admin
+  admin_email: For demonstration you can sign in as admin with email - admin@mail.ru
   messages:
     welcome_user: Welcome to the Bulletin board, %{user}!
     inсorrect_user: Failed to log in

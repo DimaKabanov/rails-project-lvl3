@@ -16,7 +16,7 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
 
     return unless @bulletin.published?
 
-    redirect_to admin_root_path, notice: 'Bulletin was successfully published'
+    redirect_to admin_root_path, notice: t('.success')
   end
 
   def reject
@@ -26,7 +26,7 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
 
     return unless @bulletin.rejected?
 
-    redirect_to admin_root_path, notice: 'Bulletin was successfully rejected'
+    redirect_to admin_root_path, notice: t('.success')
   end
 
   def archive
@@ -36,7 +36,7 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
 
     return unless @bulletin.archived?
 
-    redirect_to admin_root_path, notice: 'Bulletin was successfully archived'
+    redirect_to admin_root_path, notice: t('.success')
   end
 
   private

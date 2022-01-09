@@ -7,5 +7,21 @@ en:
         created_at: Created at %{time} ago
       new:
         title: Create bulletin
+      create:
+        success: Bulletin was successfully created
       edit:
         title: Update bulletin
+      update:
+        success: Bulletin was successfully updated
+      moderate:
+        success: Bulletin was successfully submitted for moderation
+      archive:
+        success: Bulletin was successfully archived
+    admin:
+      bulletins:
+        publish:
+          success: Bulletin was successfully published
+        reject:
+          success: Bulletin was successfully rejected
+        archive:
+          success: Bulletin was successfully archived

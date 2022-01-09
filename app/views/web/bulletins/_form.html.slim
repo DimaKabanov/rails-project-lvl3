@@ -10,6 +10,10 @@
       .mb-3
         = f.association :category
       .mb-4
+        - if @bulletin.image.representable?
+          = image_tag(@bulletin.image,
+                      width: '100',
+                      class: 'img-thumbnail mb-2')
         = f.input :image, as: :file
       .actions
         = f.button :submit, class: 'w-100 btn btn-lg btn-primary'

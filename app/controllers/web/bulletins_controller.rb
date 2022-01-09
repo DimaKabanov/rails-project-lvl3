@@ -40,7 +40,7 @@ class Web::BulletinsController < Web::ApplicationController
     authorize @bulletin
 
     if @bulletin.update(bulletin_params)
-      redirect_to profile_path
+      redirect_to profile_path, notice: t('.success')
     else
       render :edit
     end
@@ -53,7 +53,7 @@ class Web::BulletinsController < Web::ApplicationController
 
     return unless @bulletin.under_moderation?
 
-    redirect_to profile_path, notice: 'Bulletin was successfully submitted for moderation'
+    redirect_to profile_path, notice: t('.success')
   end
 
   def archive
@@ -63,7 +63,7 @@ class Web::BulletinsController < Web::ApplicationController
 
     return unless @bulletin.archived?
 
-    redirect_to profile_path, notice: 'Bulletin was successfully archived'
+    redirect_to profile_path, notice: t('.success')
   end
 
   private
