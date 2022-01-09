@@ -7,6 +7,7 @@ ruby '~> 3.0.1'
 
 gem 'aasm'
 gem 'active_storage_validations'
+gem 'aws-sdk-s3'
 
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
