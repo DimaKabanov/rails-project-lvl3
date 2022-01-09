@@ -1,0 +1,10 @@
+ru:
+  web:
+    admin:
+      categories:
+        create:
+          success: Категория была успешно создана
+        update:
+          success: Категория была успешно обновлена
+        destroy:
+          success: Категория была успешно удалена

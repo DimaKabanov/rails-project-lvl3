@@ -18,31 +18,41 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to admin_categories_path
+      redirect_to admin_categories_path, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @category = category
     authorize [:admin, @category]
   end
 
   def update
-    @category = Category.find(params[:id])
+    @category = category
     authorize [:admin, @category]
 
     if @category.update(category_params)
-      redirect_to admin_categories_path
+      redirect_to admin_categories_path, notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
-  def destroy; end
+  def destroy
+    @category = category
+    authorize [:admin, @category]
+
+    @category.destroy
+    redirect_to admin_categories_path, notice: t('.success')
+  end
 
   private
+
+  def category
+    @category ||= Category.find(params[:id])
+  end
 
   def category_params
     params.require(:category).permit(:name)
