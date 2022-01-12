@@ -1,0 +1,1 @@
+one_image_blob: <%= ActiveStorage::Blob.fixture(:filename => 'cat.png') %>

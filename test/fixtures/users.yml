@@ -8,6 +8,6 @@ two:
   email: twouser@mail.ru
   admin: false
 
-three:
+admin:
   email: admin@mail.ru
   admin: true

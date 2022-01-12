@@ -5,9 +5,16 @@ one:
   description: MyText
   category: one
   user: one
+  state: published
 
 two:
   title: Computers
   description: MyText
   category: two
   user: two
+
+three:
+  title: Cars
+  description: MyText
+  category: two
+  user: one
