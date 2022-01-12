@@ -2,6 +2,10 @@ en:
   title: Bulletin board
   as_admin: Sign in as admin
   admin_email: For demonstration you can sign in as admin with email - admin@mail.ru
+  via_networks: Via social networks
+  signin: Sign in
+  signup: Sign up
+  already_account: Already have an account
   messages:
     welcome_user: Welcome to the Bulletin board, %{user}!
     inсorrect_user: Failed to log in

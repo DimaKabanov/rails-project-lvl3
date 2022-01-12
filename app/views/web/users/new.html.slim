@@ -3,19 +3,19 @@
     .p-4.align-items-center.border.shadow.bg-white.rounded-3
       .row
         .p-3.p-lg-5.pt-lg-0
-          h2.mb-4 = t('.signup')
+          h2.mb-4 = t('signup')
           .row.justify-content-center.mt-sm-5.mb-5
             .col-sm-8.col-md-7.col-lg-5
               .card.shadow-sm.border-0
                 .card-body.text-muted
                   .d-flex.mb-4
                     hr.w-100.me-3
-                    .m-auto.text-nowrap.small = t('.via_networks')
+                    .m-auto.text-nowrap.small = t('via_networks')
                     hr.w-100.ms-3
                   = link_to(t('.github'),
                               auth_request_path,
                               method: :post,
                               class: 'btn w-100 border btn-outline-secondary')
                   p.mt-4.mb-0
-                    span.me-2 = t('.already_account')
-                    span = link_to t('.signin'), new_session_path
+                    span.me-2 = t('already_account')
+                    span = link_to t('signin'), new_session_path

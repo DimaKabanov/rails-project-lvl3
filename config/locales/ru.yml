@@ -2,6 +2,10 @@ ru:
   title: Доска объявлений
   as_admin: Войти как администратор
   admin_email: Для демонстрации вы можете войти как андминистратор используя почту - admin@mail.ru
+  via_networks: Через социальные сети
+  signin: Войти
+  signup: Зарегистрироваться
+  already_account: Уже есть аккаунт
   messages:
     welcome_user: Добро пожаловать на Доску объявлений, %{user}!
     inсorrect_user: Не получилось войти
