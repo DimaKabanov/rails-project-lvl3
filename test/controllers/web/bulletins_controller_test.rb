@@ -68,7 +68,7 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'signed user should get show draft bulletin' do
-    draft = bulletins(:two)
+    draft = bulletins(:four)
     sign_in_as_user @user
 
     get bulletin_path(draft)

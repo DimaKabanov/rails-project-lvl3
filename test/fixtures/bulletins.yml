@@ -18,3 +18,9 @@ three:
   description: MyText
   category: two
   user: one
+
+four:
+  title: Computers games
+  description: MyText
+  category: two
+  user: one

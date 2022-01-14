@@ -7,3 +7,8 @@ one_image_second:
   name: image
   record: two (Bulletin)
   blob: one_image_blob
+
+one_image_third:
+  name: image
+  record: four (Bulletin)
+  blob: one_image_blob

@@ -15,7 +15,7 @@ class BulletinPolicy < ApplicationPolicy
 
   def show?
     if user
-      true
+      author? || record.published?
     else
       record.published?
     end
