@@ -6,3 +6,8 @@ en:
       github: Github
       via_networks: Via social networks
       already_account: Already have an account?
+  web:
+    admin:
+      users:
+        update:
+          success: User was successfully updated

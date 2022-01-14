@@ -2,9 +2,10 @@ en:
   web:
     admin:
       menu:
-        on_moderation: Bulletins on moderation
+        on_moderation: On moderation
         all_bulletins: All bulletins
         all_categories: All categories
+        all_users: All users
       home:
         index:
           title: Bulletins on moderation
@@ -44,3 +45,17 @@ en:
           title: New category
         edit:
           title: Edit category
+      users:
+        index:
+          title: Users
+          id: ID
+          email: Email
+          first_name: First name
+          last_name: Last name
+          role: Role
+          actions: Actions
+          edit: Edit
+          admin: Admin
+          user: User
+        edit:
+          title: Edit user

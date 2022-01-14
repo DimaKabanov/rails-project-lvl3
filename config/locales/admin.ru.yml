@@ -5,6 +5,7 @@ ru:
         on_moderation: На модерацию
         all_bulletins: Все объявления
         all_categories: Все категории
+        all_users: Все пользователи
       home:
         index:
           title: Объявления на модерации
@@ -44,3 +45,18 @@ ru:
           title: Новая категория
         edit:
           title: Изменить категорию
+      users:
+        index:
+          title: Пользователи
+          id: ID
+          email: Почта
+          first_name: Имя
+          last_name: Фамилия
+          role: Роль
+          actions: Действия
+          edit: Изменить
+          admin: Администратор
+          user: Пользователь
+        edit:
+          title: Изменить пользователя
+

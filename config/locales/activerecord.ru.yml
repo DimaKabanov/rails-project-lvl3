@@ -8,3 +8,6 @@ ru:
         image: Изображение
       category:
         name: Название
+      user:
+        first_name: Имя
+        last_name: Фамилия

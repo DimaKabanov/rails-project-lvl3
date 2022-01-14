@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     namespace :admin do
       root 'home#index'
       resources :categories
+      resources :users, only: %i[index edit update]
       resources :bulletins do
         patch 'publish', on: :member
         patch 'reject', on: :member

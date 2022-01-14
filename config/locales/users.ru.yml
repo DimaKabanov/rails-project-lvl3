@@ -6,3 +6,8 @@ ru:
       github: Github
       via_networks: Через социальные сети
       already_account: Уже есть аккаунт?
+  web:
+    admin:
+      users:
+        update:
+          success: Пользователь был успешно обновлен

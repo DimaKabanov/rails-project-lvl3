@@ -1,0 +1,30 @@
+.row
+  .col-md-2
+    = render 'web/admin/shared/nav'
+  .col-md-10
+    .p-3.p-md-4.p-lg-5.card-body.border-0.shadow
+      h2 = t('.title')
+      hr.mb-4
+      - if @users.empty?
+        p.display-8 = t('.empty')
+      - else
+        table.table.table-striped
+          thead
+            tr
+              th = t('.id')
+              th = t('.email')
+              th = t('.first_name')
+              th = t('.last_name')
+              th = t('.role')
+              th = t('.actions')
+          tbody
+            - @users.each do |user|
+              tr
+                td = user.id
+                td = user.email
+                td = user.first_name
+                td = user.last_name
+                td = user.admin ? t('.admin') : t('.user')
+                td = link_to t('.edit'), edit_admin_user_path(user)
+
+        = paginate @users, theme: 'bootstrap-5'

@@ -12,3 +12,6 @@ en:
       approve?: You cannot approve this bulletin
       reject?: You cannot reject this bulletin
       archive?: You cannot archive this bulletin
+    admin/user_policy:
+      edit?: You cannot edit this user
+      update?: You cannot update this user

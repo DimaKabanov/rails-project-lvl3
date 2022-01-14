@@ -6,3 +6,5 @@ en:
         update: Update bulletin
       category:
         create: Create category
+      user:
+        update: Update user

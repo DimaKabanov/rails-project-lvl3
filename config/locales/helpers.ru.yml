@@ -7,3 +7,5 @@ ru:
       category:
         create: Создать категорию
         update: Обновить категорию
+      user:
+        update: Обновить пользователя
