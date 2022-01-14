@@ -23,6 +23,7 @@ en:
           empty: No bulletins yet
           name: Name
           state: State
+          category: Category
           created_at: Created at
           created_at_relative: '%{time} ago'
           creator: Creator

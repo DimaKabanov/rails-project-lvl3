@@ -1,35 +1,40 @@
-.row.text-start
-  .col-md-3
+.row
+  .col-md-2
     = render 'web/admin/shared/nav'
-  .col-md-9
-    h2.text-start.mb-4 = t('.title')
-    .p-3.bg-light.text-start.mb-5
-      = render 'web/bulletins/search_form', query: @q, url: admin_bulletins_path
-    - if @bulletins.empty?
-      p.display-8 = t('.empty')
-    - else
-      table.table.table-borderless.mt-2
-        thead
-          tr
-            th = t('.name')
-            th = t('.state')
-            th = t('.created_at')
-            th = t('.creator')
-            th = t('.actions')
-        tbody
-          - @bulletins.each do |bulletin|
+  .col-md-10
+    .p-3.p-md-4.p-lg-5.card-body.border-0.shadow
+      h2 = t('.title')
+      hr.mb-4
+      .p-3.bg-light.text-start.mb-5
+        = render 'web/bulletins/search_form', query: @q, url: admin_bulletins_path
+      - if @bulletins.empty?
+        p.display-8 = t('.empty')
+      - else
+        table.table.table-striped
+          thead
             tr
-              td = bulletin.title
-              td = bulletin.aasm.human_state
-              td = t('.created_at_relative',
-                    time: time_ago_in_words(bulletin.created_at))
-              td = bulletin.user.email
-              td
-                = link_to t('.show'), bulletin_path(bulletin), class: 'me-1'
-                - if policy([:admin, bulletin]).archive?
-                  = link_to(t('.archive'),
-                            archive_admin_bulletin_path(bulletin),
-                            method: :patch,
-                            data: { confirm: t('confirm.bulletin.archive') },
-                            class: 'text-danger')
-      = paginate @bulletins, theme: 'bootstrap-5'
+              th = t('.name')
+              th = t('.category')
+              th = t('.state')
+              th = t('.created_at')
+              th = t('.creator')
+              th = t('.actions')
+          tbody
+            - @bulletins.each do |bulletin|
+              tr
+                td = bulletin.title
+                td = bulletin.category.name
+                td = bulletin.aasm.human_state
+                td = t('.created_at_relative',
+                      time: time_ago_in_words(bulletin.created_at))
+                td = bulletin.user.email
+                td
+                  = link_to t('.show'), bulletin_path(bulletin), class: 'me-1'
+                  - if policy([:admin, bulletin]).archive?
+                    = link_to(t('.archive'),
+                              archive_admin_bulletin_path(bulletin),
+                              method: :patch,
+                              data: { confirm: t('confirm.bulletin.archive') },
+                              class: 'text-danger')
+
+        = paginate @bulletins, theme: 'bootstrap-5'

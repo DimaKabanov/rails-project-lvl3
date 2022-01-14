@@ -1,42 +1,45 @@
-.row.text-start
-  .col-md-3
+.row
+  .col-md-2
     = render 'web/admin/shared/nav'
-  .col-md-9
-    h2.text-start.mb-4 = t('.title')
-    - if @bulletins.empty?
-      p.display-8 = t('.empty')
-    - else
-      table.table.table-borderless.mt-2
-        thead
-          tr
-            th = t('.name')
-            th = t('.created_at')
-            th = t('.creator')
-            th = t('.actions')
-        tbody
-          - @bulletins.each do |bulletin|
+  .col-md-10
+    .p-3.p-md-4.p-lg-5.card-body.border-0.shadow
+      h2 = t('.title')
+      hr.mb-4
+      - if @bulletins.empty?
+        p.display-8 = t('.empty')
+      - else
+        table.table.table-striped
+          thead
             tr
-              td = link_to bulletin.title, bulletin_path(bulletin)
-              td = t('.created_at_relative',
-                    time: time_ago_in_words(bulletin.created_at))
-              td = bulletin.user.email
-              td
-                - if policy([:admin, bulletin]).publish?
-                  = link_to(t('.approve'),
-                            publish_admin_bulletin_path(bulletin),
-                            method: :patch,
-                            data: { confirm: t('confirm.bulletin.approve') },
-                            class: 'me-2')
-                - if policy([:admin, bulletin]).reject?
-                  = link_to(t('.reject'),
-                            reject_admin_bulletin_path(bulletin),
-                            method: :patch,
-                            data: { confirm: t('confirm.bulletin.reject') },
-                            class: 'me-2')
-                - if policy([:admin, bulletin]).archive?
-                  = link_to(t('.archive'),
-                            archive_admin_bulletin_path(bulletin),
-                            method: :patch,
-                            data: { confirm: t('confirm.bulletin.archive') },
-                            class: 'text-danger')
-      = paginate @bulletins, theme: 'bootstrap-5'
+              th = t('.name')
+              th = t('.created_at')
+              th = t('.creator')
+              th = t('.actions')
+          tbody
+            - @bulletins.each do |bulletin|
+              tr
+                td = link_to bulletin.title, bulletin_path(bulletin)
+                td = t('.created_at_relative',
+                      time: time_ago_in_words(bulletin.created_at))
+                td = bulletin.user.email
+                td
+                  - if policy([:admin, bulletin]).publish?
+                    = link_to(t('.approve'),
+                              publish_admin_bulletin_path(bulletin),
+                              method: :patch,
+                              data: { confirm: t('confirm.bulletin.approve') },
+                              class: 'me-2')
+                  - if policy([:admin, bulletin]).reject?
+                    = link_to(t('.reject'),
+                              reject_admin_bulletin_path(bulletin),
+                              method: :patch,
+                              data: { confirm: t('confirm.bulletin.reject') },
+                              class: 'me-2')
+                  - if policy([:admin, bulletin]).archive?
+                    = link_to(t('.archive'),
+                              archive_admin_bulletin_path(bulletin),
+                              method: :patch,
+                              data: { confirm: t('confirm.bulletin.archive') },
+                              class: 'text-danger')
+
+        = paginate @bulletins, theme: 'bootstrap-5'

@@ -1,26 +1,23 @@
-.mt-4.mb-5.pb-5
-  .container
-    .p-4.align-items-center.border.shadow.bg-white.rounded-3
-      .row
-        .p-3.p-lg-5.pt-lg-0
-          h2.mb-4 = t('signin')
-          .alert.alert-warning.text-start = t('admin_email')
-          .row.justify-content-center.mt-sm-5.mb-5
-            .col-sm-8.col-md-7.col-lg-5
-              .card.shadow-sm.border-0
-                .card-body.text-muted.text-start
-                  = simple_form_for User.new, url: session_path do |f|
-                    .mb-4
-                      = f.input :email, as: :email
-                    .actions
-                      = f.button(:submit,
-                                t('as_admin'),
-                                class: 'btn btn-warning w-100')
-                  .d-flex.my-4
-                    hr.w-100.me-3
-                    .m-auto.text-nowrap.small = t('via_networks')
-                    hr.w-100.ms-3
-                  = link_to(t('.github'),
-                              auth_request_path,
-                              method: :post,
-                              class: 'btn w-100 border btn-outline-secondary')
+.p-3.p-md-4.p-lg-5.card-body.border-0.shadow
+  h2.mb-4 = t('signin')
+  hr.mb-4
+  .alert.alert-warning.text-start = t('admin_email')
+  .row.justify-content-center.mt-sm-5.mb-5
+    .col-sm-8.col-md-7.col-lg-5
+      .card.shadow-sm.border-0
+        .card-body.text-muted.text-start
+          = simple_form_for User.new, url: session_path do |f|
+            .mb-4
+              = f.input :email, as: :email
+            .actions
+              = f.button(:submit,
+                        t('as_admin'),
+                        class: 'btn btn-warning w-100')
+          .d-flex.my-4
+            hr.w-100.me-3
+            .m-auto.text-nowrap.small = t('via_networks')
+            hr.w-100.ms-3
+          = link_to(t('.github'),
+                      auth_request_path,
+                      method: :post,
+                      class: 'btn w-100 border btn-outline-secondary')

@@ -5,7 +5,9 @@ ru:
         title: Мои объявления
         add_bulletin: Добавить объявление
         empty: Вы еще не создали ни одного объявления
+        id: ID
         name: Название
+        category: Категория
         state: Состояние
         created_at: Создано
         actions: Действия

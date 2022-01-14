@@ -1,33 +1,36 @@
-.row.text-start
-  .col-md-3
+.row
+  .col-md-2
     = render 'web/admin/shared/nav'
-  .col-md-9
-    h2.text-start.mb-4 = t('.title')
-    - if policy([:admin, Category]).new?
-      = link_to t('.add'), new_admin_category_path
-    - if @categories.empty?
-      p.display-8 = t('.empty')
-    - else
-      table.table.table-borderless.mt-2
-        thead
-          tr
-            th = t('.id')
-            th = t('.name')
-            th = t('.actions')
-        tbody
-          - @categories.each do |category|
+  .col-md-10
+    .p-3.p-md-4.p-lg-5.card-body.border-0.shadow
+      h2 = t('.title')
+      hr.mb-4
+      - if policy([:admin, Category]).new?
+        = link_to t('.add'), new_admin_category_path, class: 'btn btn-primary mb-2'
+      - if @categories.empty?
+        p.display-8 = t('.empty')
+      - else
+        table.table.table-striped
+          thead
             tr
-              td = category.id
-              td = category.name
-              td
-                - if policy([:admin, category]).edit?
-                  = link_to(t('.edit'),
-                            edit_admin_category_path(category),
-                            class: 'me-2')
-                - if policy([:admin, category]).destroy?
-                  = link_to(t('.destroy'),
-                            admin_category_path(category),
-                            method: :delete,
-                            data: { confirm: t('confirm.category.destroy') },
-                            class: 'text-danger')
-      = paginate @categories, theme: 'bootstrap-5'
+              th = t('.id')
+              th = t('.name')
+              th = t('.actions')
+          tbody
+            - @categories.each do |category|
+              tr
+                td = category.id
+                td = category.name
+                td
+                  - if policy([:admin, category]).edit?
+                    = link_to(t('.edit'),
+                              edit_admin_category_path(category),
+                              class: 'me-2')
+                  - if policy([:admin, category]).destroy?
+                    = link_to(t('.destroy'),
+                              admin_category_path(category),
+                              method: :delete,
+                              data: { confirm: t('confirm.category.destroy') },
+                              class: 'text-danger')
+
+        = paginate @categories, theme: 'bootstrap-5'

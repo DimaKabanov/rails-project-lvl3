@@ -5,7 +5,9 @@ en:
         title: My bulletins
         add_bulletin: Add bulletin
         empty: You haven't created any bulletins yet
+        id: ID
         name: Name
+        category: Category
         state: State
         created_at: Created at
         actions: Actions

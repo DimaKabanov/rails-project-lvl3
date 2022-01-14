@@ -2,7 +2,7 @@ ru:
   web:
     admin:
       menu:
-        on_moderation: Объявления на модерации
+        on_moderation: На модерацию
         all_bulletins: Все объявления
         all_categories: Все категории
       home:
@@ -23,6 +23,7 @@ ru:
           empty: Объявлений еще нет
           name: Название
           state: Состояние
+          category: Категория
           created_at: Создано
           created_at_relative: '%{time} назад'
           creator: Автор
