@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   scope module: :web do
     root 'bulletins#index'
 
-    get '/auth/:provider/callback', to: 'auth#callback', as: 'callback_auth', via: :all
-    post '/auth/github', to: 'auth#callback', as: 'auth_request'
+    get '/auth/:provider/callback', to: 'auth#callback', as: :callback_auth, via: :all
+    post '/auth/:provider', to: 'auth#request', as: :auth_request
 
     resource :session, only: %i[new create destroy]
     resource :user, only: %i[new]

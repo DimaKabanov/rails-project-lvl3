@@ -10,7 +10,7 @@
             .m-auto.text-nowrap.small = t('via_networks')
             hr.w-100.ms-3
           = link_to(t('.github'),
-                      auth_request_path,
+                      auth_request_path(:github),
                       method: :post,
                       class: 'btn w-100 border btn-outline-secondary')
           p.mt-4.mb-0
