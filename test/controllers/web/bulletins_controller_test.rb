@@ -36,7 +36,13 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
 
   test 'guest cant create bulletin' do
     assert_no_difference('Bulletin.count') do
-      post bulletins_path, params: { bulletin: @attrs }
+      bulletin = {
+        title: Faker::Lorem.characters(number: 4),
+        description: Faker::Lorem.paragraph_by_chars(number: 400),
+        category_id: @bulletin.category_id
+      }
+
+      post bulletins_path, params: { bulletin: bulletin }
     end
   end
 
@@ -78,13 +84,18 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   test 'signed user should create bulletin' do
     sign_in_as_user @user
 
-    post bulletins_path, params: {
-      bulletin: @attrs.merge(image: fixture_file_upload('cat.png', 'image/png'))
+    bulletin = {
+      title: Faker::Lorem.characters(number: 4),
+      description: Faker::Lorem.paragraph_by_chars(number: 400),
+      category_id: @bulletin.category_id,
+      image: fixture_file_upload('cat.png', 'image/png')
     }
+
+    post bulletins_path, params: { bulletin: bulletin }
     assert_response :redirect
 
-    bulletin = Bulletin.find_by(@attrs)
-    assert { bulletin }
+    new_bulletin = Bulletin.find_by(title: bulletin[:title])
+    assert { new_bulletin }
   end
 
   test 'signed user should archive bulletin' do
