@@ -12,6 +12,7 @@ en:
     welcome_admin: Welcome, admin!
     inсorrect_admin: Inсorrect admin email
     goodby: Goodby!
+    only_admin: This action is available only to the administrator
   nav:
     bulletins: Bulletins
     signout: Sign Out

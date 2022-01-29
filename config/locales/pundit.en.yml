@@ -7,11 +7,3 @@ en:
       update?: You cannot update this bulletin
       to_moderate?: You cannot submit this bulletin for moderation
       archive?: You cannot archive this bulletin
-    admin/bulletin_policy:
-      show?: You cannot watch this bulletin
-      approve?: You cannot approve this bulletin
-      reject?: You cannot reject this bulletin
-      archive?: You cannot archive this bulletin
-    admin/user_policy:
-      edit?: You cannot edit this user
-      update?: You cannot update this user

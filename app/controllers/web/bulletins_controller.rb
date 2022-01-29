@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 class Web::BulletinsController < Web::ApplicationController
-  after_action :verify_authorized
+  after_action :verify_authorized, except: :index
 
   def index
     @q = Bulletin.published.order(created_at: :desc).ransack(params[:q])
     @bulletins = @q.result(distinct: true).page(params[:page])
-    authorize @bulletins
   end
 
   def new
@@ -26,20 +25,17 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   def show
-    @bulletin = bulletin
-    authorize @bulletin
+    authorize bulletin
   end
 
   def edit
-    @bulletin = bulletin
-    authorize @bulletin
+    authorize bulletin
   end
 
   def update
-    @bulletin = bulletin
-    authorize @bulletin
+    authorize bulletin
 
-    if @bulletin.update(bulletin_params)
+    if bulletin.update(bulletin_params)
       redirect_to profile_path, notice: t('.success')
     else
       render :edit
@@ -47,23 +43,25 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   def moderate
-    @bulletin = bulletin
-    authorize @bulletin
-    @bulletin.moderate!
+    authorize bulletin
 
-    return unless @bulletin.under_moderation?
-
-    redirect_to profile_path, notice: t('.success')
+    if bulletin.may_moderate?
+      bulletin.moderate!
+      redirect_to profile_path, notice: t('.success')
+    else
+      render :index, status: :unprocessable_entity
+    end
   end
 
   def archive
-    @bulletin = bulletin
-    authorize @bulletin
-    @bulletin.archive!
+    authorize bulletin
 
-    return unless @bulletin.archived?
-
-    redirect_to profile_path, notice: t('.success')
+    if bulletin.may_archive?
+      bulletin.archive!
+      redirect_to profile_path, notice: t('.success')
+    else
+      render :index, status: :unprocessable_entity
+    end
   end
 
   private

@@ -23,19 +23,19 @@
                       time: time_ago_in_words(bulletin.created_at))
                 td = bulletin.user.email
                 td
-                  - if policy([:admin, bulletin]).publish?
+                  - if bulletin.under_moderation?
                     = link_to(t('.approve'),
                               publish_admin_bulletin_path(bulletin),
                               method: :patch,
                               data: { confirm: t('confirm.bulletin.approve') },
                               class: 'me-2')
-                  - if policy([:admin, bulletin]).reject?
+                  - if bulletin.under_moderation?
                     = link_to(t('.reject'),
                               reject_admin_bulletin_path(bulletin),
                               method: :patch,
                               data: { confirm: t('confirm.bulletin.reject') },
                               class: 'me-2')
-                  - if policy([:admin, bulletin]).archive?
+                  - unless bulletin.archived?
                     = link_to(t('.archive'),
                               archive_admin_bulletin_path(bulletin),
                               method: :patch,

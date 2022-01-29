@@ -5,8 +5,7 @@
     .p-3.p-md-4.p-lg-5.card-body.border-0.shadow
       h2 = t('.title')
       hr.mb-4
-      - if policy([:admin, Category]).new?
-        = link_to t('.add'), new_admin_category_path, class: 'btn btn-primary mb-2'
+      = link_to t('.add'), new_admin_category_path, class: 'btn btn-primary mb-2'
       - if @categories.empty?
         p.display-8 = t('.empty')
       - else
@@ -22,15 +21,13 @@
                 td = category.id
                 td = category.name
                 td
-                  - if policy([:admin, category]).edit?
-                    = link_to(t('.edit'),
-                              edit_admin_category_path(category),
-                              class: 'me-2')
-                  - if policy([:admin, category]).destroy?
-                    = link_to(t('.destroy'),
-                              admin_category_path(category),
-                              method: :delete,
-                              data: { confirm: t('confirm.category.destroy') },
-                              class: 'text-danger')
+                  = link_to(t('.edit'),
+                            edit_admin_category_path(category),
+                            class: 'me-2')
+                  = link_to(t('.destroy'),
+                            admin_category_path(category),
+                            method: :delete,
+                            data: { confirm: t('confirm.category.destroy') },
+                            class: 'text-danger')
 
         = paginate @categories, theme: 'bootstrap-5'

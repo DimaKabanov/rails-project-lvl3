@@ -1,42 +1,36 @@
 # frozen_string_literal: true
 
 class Web::Admin::BulletinsController < Web::Admin::ApplicationController
-  after_action :verify_authorized
-
   def index
     @q = Bulletin.ransack(params[:q])
     @bulletins = @q.result(distinct: true).page(params[:page])
-    authorize [:admin, @bulletins]
   end
 
   def publish
-    @bulletin = bulletin
-    authorize [:admin, @bulletin]
-    @bulletin.publish!
-
-    return unless @bulletin.published?
-
-    redirect_to admin_root_path, notice: t('.success')
+    if bulletin.may_publish?
+      bulletin.publish!
+      redirect_to admin_root_path, notice: t('.success')
+    else
+      render :index, status: :unprocessable_entity
+    end
   end
 
   def reject
-    @bulletin = bulletin
-    authorize [:admin, @bulletin]
-    @bulletin.reject!
-
-    return unless @bulletin.rejected?
-
-    redirect_to admin_root_path, notice: t('.success')
+    if bulletin.may_reject?
+      bulletin.reject!
+      redirect_to admin_root_path, notice: t('.success')
+    else
+      render :index, status: :unprocessable_entity
+    end
   end
 
   def archive
-    @bulletin = bulletin
-    authorize [:admin, @bulletin]
-    @bulletin.archive!
-
-    return unless @bulletin.archived?
-
-    redirect_to admin_root_path, notice: t('.success')
+    if bulletin.may_archive?
+      bulletin.archive!
+      redirect_to admin_root_path, notice: t('.success')
+    else
+      render :index, status: :unprocessable_entity
+    end
   end
 
   private
