@@ -13,8 +13,7 @@
             tr
               th = t('.id')
               th = t('.email')
-              th = t('.first_name')
-              th = t('.last_name')
+              th = t('.name')
               th = t('.role')
               th = t('.actions')
           tbody
@@ -22,8 +21,7 @@
               tr
                 td = user.id
                 td = user.email
-                td = user.first_name
-                td = user.last_name
+                td = user.name
                 td = user.admin ? t('.admin') : t('.user')
                 td = link_to t('.edit'), edit_admin_user_path(user)
 

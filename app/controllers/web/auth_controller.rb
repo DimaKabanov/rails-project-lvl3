@@ -7,7 +7,7 @@ class Web::AuthController < Web::ApplicationController
     auth_user_info = auth[:info]
 
     user = User.find_or_initialize_by(email: auth_user_info[:email].downcase)
-    user.first_name = auth_user_info[:name]
+    user.name = auth_user_info[:name]
 
     if user.save
       sign_in user

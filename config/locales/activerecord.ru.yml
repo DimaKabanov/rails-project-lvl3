@@ -9,5 +9,4 @@ ru:
       category:
         name: Название
       user:
-        first_name: Имя
-        last_name: Фамилия
+        name: Имя

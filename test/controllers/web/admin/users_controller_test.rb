@@ -7,8 +7,7 @@ class Web::Admin::UsersControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     sign_in_as_admin users(:admin)
     @attrs = {
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name
+      name: Faker::Name.name
     }
   end
 
@@ -28,7 +27,6 @@ class Web::Admin::UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to controller: 'web/admin/users', action: 'index'
 
     @user.reload
-    assert { @attrs[:first_name] == @user.first_name }
-    assert { @attrs[:last_name] == @user.last_name }
+    assert { @attrs[:name] == @user.name }
   end
 end

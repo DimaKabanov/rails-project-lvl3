@@ -50,8 +50,7 @@ ru:
           title: Пользователи
           id: ID
           email: Почта
-          first_name: Имя
-          last_name: Фамилия
+          name: Имя
           role: Роль
           actions: Действия
           edit: Изменить

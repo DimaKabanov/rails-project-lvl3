@@ -24,6 +24,6 @@ class Web::Admin::UsersController < Web::Admin::ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name)
+    params.require(:user).permit(:name)
   end
 end
